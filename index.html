@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Társas sorsoló</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <div>
+                <h1>Mivel játszunk?</h1>
+                    <p>Az oldal azzal a céllal készült, hogy adott társasjátékok közül kisorsolja melyikkel játszunk.</p>
+                    <p>A lista megadásához szükség van egy csv fájlra, amiből válogat a szoftver. Ezt a listát itt is létre lehet hozni, bővteni lehet, viszont lokálisan kell meglennie, ott is próbálja létrehozni a rendszer a fájlt, ha az nem létezik, vagy a defaultot lehet használni</p>
+                    <p>amennyiben nincs úgy lehetőség van itt létrehozni a fájlt/fájlokat</p>
+                    <p>A meglévő fájl/fájlok bővítése is lehetséges</p>
+            </div>
+            <div class="">
+                <input type="radio" checked class="change_form" name="change_form" id="newListGenerate">
+                <label class="change_label" for="newListGenerate">Új lista létrehozása</label>
+                <input type="radio" class="change_form" name="change_form" id="oldListUpload" checked>
+                <label class="change_label" for="oldListUpload">Meglévő lista feltöltése</label>
+                <input type="radio" class="change_form" name="change_form" id="oldListUpdate">
+                <label class="change_label" for="oldListUpdate">Régi lista frissítése</label>
+            </div>
+            <div id="page">
+                <form action="?" id="existed_list_adder">
+                    <div>
+                        <input class="upload" type="file" id="myFile" name="filename" accept=".csv">
+                        <button type="submit">Feltöltés</button>
+                    </div>    
+                </form>
+                <form action="?" id="new_list_generate">
+                    <div>
+                        <select id="boardgame" name="boardgame">
+                            <option value="">Társasjáték</option>
+                            <option value="">Kiegészítő</option>
+                        </select>
+                    </div>    
+                    <div>
+                        <label class="label"> Társasjáték neve: </label>
+                        <input class="input" type="text" id="boardgamen_name" name="boardgamen_name" placeholder="Társasjáték neve">
+                    </div>    
+                    <button type="submit">Hozzáadás a listához</button>
+                </form>
+                <form action="?" id="existed_list_update">
+                    <div>
+                        <input class="upload" type="file" id="myFile2" name="filename2" accept=".csv">
+                        <button type="submit">Feltöltés</button>
+                    </div>    
+                </form>
+            </div>    
+        </div>  
+    <script src="upload.js"></script>
+    <script src="new_list_creator.js"></script>
+    </body>
+</html>
