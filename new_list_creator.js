@@ -1,35 +1,29 @@
-function remove_hide (p_hide) {
-    let v_html = document.getElementById(p_hide);
-
-    v_html.classList.remove("hide");
+function boardgamePlayedNum(){
+    document.getElementById("new_yes").addEventListener('change', function() {
+        if (this.checked) {
+            formDisplay("boardgame_played_num", "block"); 
+        } 
+    }); 
+    document.getElementById("new_no").addEventListener('change', function() {
+        if (this.checked) {
+            formDisplay("boardgame_played_num", "none");  
+        }
+    });
 }
 
-function add_hide (p_add_hide) {
+function expansion_check(){
 
-    for (let i; i < p_add_hide.length; i++)
-    {
-        let v_html = document.getElementById(p_add_hide[i]);
-
-        v_html.classList.add("hide");
-    }
+    document.getElementById("exponasion").addEventListener("change", function() {
+        if (this.checked) {
+            formDisplay("expnsion_of_boardgame", "block"); 
+        } 
+    });
+    document.getElementById("boardgame").addEventListener('change', function() {
+            if (this.checked) {
+            formDisplay("expnsion_of_boardgame", "none");  
+            }
+    });
 }
 
-function addNewListElement(){
-    null;
-}
-
-
-function caller(){
-
-    document.getElementById("newListGenerate").addEventListener("click", (event) => {remove_hide("existed_list_adder");
-                                                 add_hide(["oldListUpload","oldListUpdate"]);});
-
-    document.getElementById("oldListUpload").addEventListener("click", (event) => {remove_hide("new_list_generate");
-                                                 add_hide(["newListGenerate","oldListUpdate"]);});
-
-    document.getElementById("oldListUpdate").addEventListener("click", (event) => {remove_hide("existed_list_update");
-                                                 add_hide(["newListGenerate","oldListUpload"]);});
-    
-}
-
-caller();
+boardgamePlayedNum();
+expansion_check();
