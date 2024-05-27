@@ -1,8 +1,27 @@
-:root{
-    --v_new_list_display: none;
-    --v_upload_old: none;
-    --v_upgrade_old: none;
+:root {
+  --v_new_list_display: none;
+  --v_upload_old: none;
+  --v_upgrade_old: none;
+
 }
+
+/*#newListGenerate:checked ~ #page {
+  --v_new_list_display: block;
+  --v_upload_old: none;
+  --v_upgrade_old: none;
+}
+
+#oldListUpload:checked ~ #page {
+  --v_new_list_display: none;
+  --v_upload_old: block;
+  --v_upgrade_old: none;
+}
+
+#oldListUpdate:checked ~ #page {
+  --v_new_list_display: none;
+  --v_upload_old: none;
+  --v_upgrade_old: block;
+}*/
 
 /* change form mode */
 .change_form { /* Hides the radio buttons */
@@ -33,24 +52,10 @@
     border-radius: 15px;
   }
 
-
-  #newListGenerate:checked ~ #page {
-    --v_new_list_display: block;
-    --v_upload_old: none;
-    --v_upgrade_old: none;
-    background-color: blue;
-  }
-
-  #oldListUpload:checked ~ #page {
-    --v_new_list_display: none;
-    --v_upload_old: block;
-    --v_upgrade_old: none;
-  }
-
-  #oldListUpdate:checked ~ #page {
-    --v_new_list_display: none;
-    --v_upload_old: none;
-    --v_upgrade_old: block;
+  .change_label::after {
+    box-shadow: 0 0 10px #118b85;
+    border: 3px solid #16938d;
+    border-radius: 15px;
   }
 
 html,body{
@@ -58,6 +63,7 @@ html,body{
     padding: 5px;
     background: linear-gradient(117deg, #a6a6d1 0%, #535379 100%);
     color: rgb(12, 9, 19);
+    height: 100%;
 }
 
 h1{
@@ -80,4 +86,11 @@ h1{
 #existed_list_update{
     display: var(--v_upgrade_old);   
 }
-  
+
+#boardgame_played_num{
+  display: none;
+}
+
+#expnsion_of_boardgame{
+  display: none;
+}
