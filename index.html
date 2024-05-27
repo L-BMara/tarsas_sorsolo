@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div>
+        <div id="page">
             <div>
                 <h1>Mivel játszunk?</h1>
                     <p>Az oldal azzal a céllal készült, hogy adott társasjátékok közül kisorsolja melyikkel játszunk.</p>
@@ -14,7 +14,7 @@
                     <p>amennyiben nincs úgy lehetőség van itt létrehozni a fájlt/fájlokat</p>
                     <p>A meglévő fájl/fájlok bővítése is lehetséges</p>
             </div>
-            <div class="">
+            <div>
                 <input type="radio" checked class="change_form" name="change_form" id="newListGenerate">
                 <label class="change_label" for="newListGenerate">Új lista létrehozása</label>
                 <input type="radio" class="change_form" name="change_form" id="oldListUpload" checked>
@@ -22,7 +22,7 @@
                 <input type="radio" class="change_form" name="change_form" id="oldListUpdate">
                 <label class="change_label" for="oldListUpdate">Régi lista frissítése</label>
             </div>
-            <div id="page">
+            <div>
                 <form action="?" id="existed_list_adder">
                     <div>
                         <input class="upload" type="file" id="myFile" name="filename" accept=".csv">
@@ -31,15 +31,30 @@
                 </form>
                 <form action="?" id="new_list_generate">
                     <div>
-                        <select id="boardgame" name="boardgame">
-                            <option value="">Társasjáték</option>
-                            <option value="">Kiegészítő</option>
-                        </select>
+                        <label class="label"> Társasjáték </label>
+                        <input class="input" type="radio" id="boardgame" name="is_exponasion"> 
+                        <label class="label"> Kiegészítő </label>
+                        <input class="input" type="radio" id="exponasion" name="is_exponasion">
                     </div>    
                     <div>
                         <label class="label"> Társasjáték neve: </label>
                         <input class="input" type="text" id="boardgamen_name" name="boardgamen_name" placeholder="Társasjáték neve">
                     </div>    
+                    <div id="expnsion_of_boardgame">
+                        <label class="label"> Kiegészítő neve: </label>
+                        <input class="input" type="text" id="expansion_name" name="expansion_name" placeholder="Kiegészítő neve">
+                    </div>
+                    <div>
+                        <p class="label">Új?</p>
+                        <label class="label"> igen </label>
+                        <input class="input" type="radio" id="new_yes" name="new_old_boardgame"> 
+                        <label class="label"> nem </label>
+                        <input class="input" type="radio" id="new_no" name="new_old_boardgame">
+                    </div>
+                    <div id="boardgame_played_num">
+                        <label class="label"> Hányszor játszottál eddig vele? (nagyságrendi szám) </label>
+                        <input class="input" type="number" id="boardgame_played" name="boardgame_played" placeholder="0"> 
+                    </div>
                     <button type="submit">Hozzáadás a listához</button>
                 </form>
                 <form action="?" id="existed_list_update">
@@ -52,5 +67,6 @@
         </div>  
     <script src="upload.js"></script>
     <script src="new_list_creator.js"></script>
+    <script src="menu.js"></script>
     </body>
 </html>
